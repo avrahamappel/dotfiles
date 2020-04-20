@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#
+# Run all dotfiles upgraders.
+
+set -e
+
+cd "$(dirname $0)"/..
+
+# find the upgraders and run them iteratively
+find . -name upgrade.sh | while read upgrader ; do sh -c "${upgrader}" ; done
