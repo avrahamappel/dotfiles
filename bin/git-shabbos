@@ -1,0 +1,28 @@
+#!/bin/bash
+
+rev=0
+
+case $1 in
+    '-h')
+        message='מאחל לך שבת שלום'
+        rev=1
+        ;;
+    '-e')
+        message='wishes you a good Shabbos!'
+        ;;
+    *)
+        message='ווינשט דיר א גוט שבת'
+        rev=1
+        ;;
+esac
+
+if [ "$rev" = 1 ]; then
+    # iTerm2 doesn't support right-to-left characters
+    if [ "$TERM_PROGRAM" = "iTerm.app" ]; then message=$(echo $message | rev); fi
+
+    m="$message Git"
+else
+    m="Git $message"
+fi
+
+echo $m
