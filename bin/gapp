@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# Open a Google app in the browser.
+# By default it opens using the second Google account saved in the browser,
+# which is what I usually need. To open with a different account, pass the
+# 0-based index of the account as the second parameter.
+
+app=$1
+user=${2:-1}
+
+open "https://$app.google.com/u/$user"
