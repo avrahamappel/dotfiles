@@ -19,6 +19,7 @@ then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
   fi
 
+  brew bundle --no-lock
 fi
 
 exit 0

@@ -1,8 +1,7 @@
 #!/bin/bash
 # Update the workspace
 
-source ./config.zsh
-
-brew bundle
+brew upgrade
+brew cask upgrade
 brew bundle dump --force --describe
 brew doctor
