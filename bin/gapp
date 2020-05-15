@@ -1,11 +1,20 @@
-#!/bin/bash
+#!/usr/bin/env python3
 #
 # Open a Google app in the browser.
 # By default it opens using the second Google account saved in the browser,
 # which is what I usually need. To open with a different account, pass the
 # 0-based index of the account as the second parameter.
 
-app=$1
-user=${2:-1}
+import os
+import sys
 
-open "https://$app.google.com/u/$user"
+app = sys.argv[1]
+user = sys.argv[2] if len(sys.argv) >= 3 else 1
+authuser_apps = {
+    'meet',
+}
+
+if app in authuser_apps:
+    os.system('open https://{}.google.com?authuser={}'.format(app, user))
+else:
+    os.system('open https://{}.google.com/u/{}'.format(app, user))
