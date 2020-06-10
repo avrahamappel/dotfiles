@@ -1,0 +1,20 @@
+# Generates test case names from your notes.
+# Turns this:
+# ```php
+# class Test extends TestCase
+# {
+#     // make sure the thing works
+# }
+# ```
+# 
+# into this:
+# 
+# ```php
+# class Test extends TestCase
+# {
+#     public function test_make_sure_the_thing_works() {}
+# }
+# ```
+test_gen() {
+    sed -E -i -- '/\/\//{ s/([^ ]) /\1_/g; s/\/\//public function test/; s/$/() \{\}/; }' $1
+}
