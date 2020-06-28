@@ -63,5 +63,8 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
+# Disable command correction prompt
+ unsetopt correct
+
 # Notify existing users that they should migrate to another variable.
 export ZSH='$ZSH is deprecated, use either $DOTFILES or $OHMYZSH instead.'
