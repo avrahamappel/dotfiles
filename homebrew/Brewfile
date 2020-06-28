@@ -8,32 +8,20 @@ tap "homebrew/services"
 brew "sqlite"
 # Interpreted, interactive, object-oriented programming language
 brew "python"
-# GNU CLISP, a Common Lisp implementation
-brew "clisp"
 # Dependency manager for Cocoa projects
 brew "cocoapods"
 # Dependency Manager for PHP
 brew "composer"
 # Lightweight DNS forwarder and DHCP server
 brew "dnsmasq", restart_service: true
-# Create Docker hosts locally and on cloud providers
-brew "docker-machine"
 # Select default apps for documents and URL schemes on macOS
 brew "duti"
-# Functional programming language for building browser-based GUIs
-brew "elm"
 # Low-level access to audio, keyboard, mouse, joystick, and graphics
 brew "sdl2"
 # Distributed revision control system
 brew "git"
-# Open source programming language to build simple/reliable/efficient software
-brew "go"
-# Google Search and News from the command-line
-brew "googler"
 # Open-source build automation tool based on the Groovy and Kotlin DSL
 brew "gradle"
-# The Haskell Tool Stack
-brew "haskell-stack"
 # Apache HTTP server
 brew "httpd"
 # CLI for MySQL with auto-completion and syntax highlighting
@@ -50,27 +38,14 @@ brew "php", restart_service: true
 brew "php@7.2"
 # General-purpose scripting language
 brew "php@7.3"
+# Python dependency management tool
+brew "pipenv"
 # Persistent key-value database, with built-in net interface
 brew "redis"
-# Library for loading images as SDL surfaces and textures
-brew "sdl2_image"
-# Library for using TrueType fonts in SDL applications
-brew "sdl2_ttf"
-# Static analysis and lint tool, for (ba)sh scripts
-brew "shellcheck"
-# Scriptable browser for Web developers
-brew "slimerjs"
 # User interface to the TELNET protocol
 brew "telnet"
 # JavaScript package manager
 brew "yarn"
 cask "gimp"
-cask "google-chrome-canary"
-cask "insomnia"
 cask "java8"
-cask "multipatch"
-cask "openemu"
-cask "vagrant"
-cask "virtualbox"
-cask "wine-stable"
 cask "xquartz"
