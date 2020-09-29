@@ -6,8 +6,6 @@ tap "homebrew/core"
 tap "homebrew/services"
 # Command-line interface for SQLite
 brew "sqlite"
-# Interpreted, interactive, object-oriented programming language
-brew "python"
 # Dependency manager for Cocoa projects
 brew "cocoapods"
 # Dependency Manager for PHP
@@ -24,6 +22,10 @@ brew "git"
 brew "gradle"
 # Apache HTTP server
 brew "httpd"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
+# Text-based web browser
+brew "lynx"
 # CLI for MySQL with auto-completion and syntax highlighting
 brew "mycli"
 # Open source relational database management system
@@ -42,10 +44,13 @@ brew "php@7.3"
 brew "pipenv"
 # Persistent key-value database, with built-in net interface
 brew "redis"
+# Tool to create intelligent and beautiful documentation
+brew "sphinx-doc"
 # User interface to the TELNET protocol
 brew "telnet"
 # JavaScript package manager
 brew "yarn"
 cask "gimp"
 cask "java8"
+cask "wine-stable"
 cask "xquartz"
