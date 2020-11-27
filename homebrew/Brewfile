@@ -33,9 +33,7 @@ brew "mysql@5.7", restart_service: true, link: true
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx", restart_service: true
 # Platform built on V8 to build network applications
-brew "node", link: false
-# Platform built on V8 to build network applications
-brew "node@14", link: true
+brew "node@14"
 # General-purpose scripting language
 brew "php", restart_service: true
 # General-purpose scripting language
