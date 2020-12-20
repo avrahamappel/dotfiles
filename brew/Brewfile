@@ -4,8 +4,11 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "shivammathur/php"
 # Command-line interface for SQLite
 brew "sqlite"
+# Official C++ interface for the ATK accessibility toolkit library
+brew "atkmm"
 # Dependency manager for Cocoa projects
 brew "cocoapods"
 # Dependency Manager for PHP
@@ -20,10 +23,16 @@ brew "sdl2"
 brew "git"
 # Open-source build automation tool based on the Groovy and Kotlin DSL
 brew "gradle"
+# C++ interfaces for GTK+ and GNOME
+brew "gtkmm"
+# Cross-platform program for developing Haskell projects
+brew "haskell-stack"
 # Apache HTTP server
 brew "httpd"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
 # Text-based web browser
 brew "lynx"
 # CLI for MySQL with auto-completion and syntax highlighting
@@ -33,13 +42,13 @@ brew "mysql@5.7", restart_service: true, link: true
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx", restart_service: true
 # Platform built on V8 to build network applications
-brew "node@14"
+brew "node@14", link: true
 # General-purpose scripting language
-brew "php", restart_service: true
+brew "php", restart_service: true, link: false
 # General-purpose scripting language
-brew "php@7.2"
+brew "php@7.3", restart_service: true, link: true
 # General-purpose scripting language
-brew "php@7.3"
+brew "php@7.4"
 # Python dependency management tool
 brew "pipenv"
 # Persistent key-value database, with built-in net interface
