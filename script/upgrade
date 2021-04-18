@@ -7,4 +7,4 @@ set -e
 cd "$(dirname $0)"/..
 
 # find the upgraders and run them iteratively
-find -s . -name upgrade.sh | while read upgrader ; do sh -c "${upgrader}" ; done
+find . -name upgrade.sh | sort | while read upgrader ; do sh -c "${upgrader}" ; done

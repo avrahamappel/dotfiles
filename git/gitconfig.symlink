@@ -19,16 +19,16 @@
         editor = vim
 [apply]
         whitespace = nowarn
-[merge]
-        tool = phpstorm
-[mergetool "phpstorm"]
-        cmd = phpstorm merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
-        trustExitCode = true
-[diff]
-        tool = phpstorm
-[difftool "phpstorm"]
-        cmd = phpstorm diff "$LOCAL" "$REMOTE"
-        prompt = false
+# [merge]
+        # tool = phpstorm
+# [mergetool "phpstorm"]
+        # cmd = phpstorm merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+        # trustExitCode = true
+# [diff]
+        # tool = phpstorm
+# [difftool "phpstorm"]
+        # cmd = phpstorm diff "$LOCAL" "$REMOTE"
+        # prompt = false
 [help]
         autocorrect = 1
 [push]

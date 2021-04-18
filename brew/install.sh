@@ -6,7 +6,7 @@
 # using Homebrew.
 
 # Check for Homebrew
-if test ! $(which brew)
+if test ! $(which brew 2> /dev/null)
 then
   echo "  Installing Homebrew for you."
 
@@ -17,6 +17,9 @@ then
   elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
   then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+  else
+    echo "  Can't install Homebrew on your system."
+    exit 0
   fi
 
   brew bundle --no-lock
