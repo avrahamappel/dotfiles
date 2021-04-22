@@ -58,6 +58,18 @@ directory_name() {
   echo "%B%F{cyan}%~%f%b"
 }
 
+last_error() {
+  echo "%(?..%B%F{red}! %?%f%b)"
+}
+
+prompt_arrow() {
+  echo "%B%F%(!.#.\$)%f%b"
+}
+
+jobs_count() {
+  echo "%(1j.%B%F{green}(%j%)%f%b.)"
+}
+
 battery_status() {
   if test ! "$(uname)" = "Darwin"
   then
@@ -70,11 +82,10 @@ battery_status() {
   fi
 }
 
-# export PROMPT=$'\n$(battery_status)in $(directory_name) $(git_dirty)$(need_push)\n› '
-export PROMPT=$'\n$(user_name) $(directory_name)\n› '
+export PROMPT=$'\n$(user_name) $(directory_name)\n$(last_error)\n$(prompt_arrow) '
 
 set_prompt () {
-  export RPROMPT="%B%F%t%f%b"
+  export RPROMPT="$(jobs_count) %B%F%t%f%b"
 }
 
 precmd() {
