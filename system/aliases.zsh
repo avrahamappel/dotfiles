@@ -8,3 +8,11 @@ then
   alias ll="gls -l --color"
   alias la='gls -A --color'
 fi
+
+if ! (( $+commands[pbcopy] ))
+then
+  if (( $+commands[clip] ))
+  then
+    alias pbcopy="clip"
+  fi
+fi
