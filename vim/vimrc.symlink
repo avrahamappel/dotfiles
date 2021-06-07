@@ -15,8 +15,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
 Plugin 'junegunn/fzf'
-Plugin 'Shougo/neocomplete.vim'
+Plugin 'universal-ctags/ctags'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -27,4 +28,10 @@ set tabstop=4
 set shiftwidth=4
 set smarttab
 set expandtab
+
+"""""""""""""""""""""""""""""""""""""
+" Mappings configurationn
+"""""""""""""""""""""""""""""""""""""
+map <C-n> :NERDTreeToggle<CR>
+map <C-m> :TagbarToggle<CR>
 
