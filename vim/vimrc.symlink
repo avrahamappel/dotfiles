@@ -1,6 +1,8 @@
 set nocompatible
 syntax on
+set re=0
 set encoding=utf8
+set hidden
 
 """" START Vundle Configuration
 
@@ -18,6 +20,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'junegunn/fzf'
 Plugin 'universal-ctags/ctags'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'tomasr/molokai'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -29,9 +33,14 @@ set shiftwidth=4
 set smarttab
 set expandtab
 
+set number
+
+colorscheme molokai
+
 """""""""""""""""""""""""""""""""""""
 " Mappings configurationn
 """""""""""""""""""""""""""""""""""""
 map <C-n> :NERDTreeToggle<CR>
+map ,n :NERDTreeFind<CR>
 map <C-m> :TagbarToggle<CR>
-
+map <C-p> :FZF<CR>
