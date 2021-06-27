@@ -16,11 +16,18 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
+" Navigation plugins
 Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 Plugin 'universal-ctags/ctags'
+Plugin 'ludovicchabant/vim-gutentags'
+
+" Code style / syntax plugins
+Plugin 'sheerun/vim-polyglot'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'sbdchd/neoformat'
+
+" Theme plugins
 Plugin 'tomasr/molokai'
 
 " All of your Plugins must be added before the following line
@@ -40,7 +47,18 @@ colorscheme molokai
 """""""""""""""""""""""""""""""""""""
 " Mappings configurationn
 """""""""""""""""""""""""""""""""""""
-map <C-n> :NERDTreeToggle<CR>
-map ,n :NERDTreeFind<CR>
-map <C-m> :TagbarToggle<CR>
 map <C-p> :FZF<CR>
+map ,p :Files<CR>
+map ,n :Tags<CR>
+
+augroup style
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
+
+augroup lint
+  autocmd!
+  autocmd FileType javascript setlocal makeprg=npx\ eslint
+  autocmd BufWritePost *.js silent make! <afile> | silent redraw!
+  autocmd QuickFixCmdPost [^l]* cwindow
+augroup END
