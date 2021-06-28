@@ -21,11 +21,13 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'universal-ctags/ctags'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'scrooloose/nerdtree'
 
 " Code style / syntax plugins
 Plugin 'sheerun/vim-polyglot'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'sbdchd/neoformat'
+Plugin 'preservim/nerdcommenter'
 
 " Theme plugins
 Plugin 'tomasr/molokai'
@@ -40,16 +42,38 @@ set shiftwidth=4
 set smarttab
 set expandtab
 
+" Editor appearance
+set nowrap
 set number
+set laststatus=2
+
+" Search options
+set ignorecase
+set smartcase
 
 colorscheme molokai
 
 """""""""""""""""""""""""""""""""""""
 " Mappings configurationn
 """""""""""""""""""""""""""""""""""""
-map <C-p> :FZF<CR>
-map ,p :Files<CR>
-map ,n :Tags<CR>
+map \p :Files<CR>
+map \e :History<CR>
+map \r :BTags<CR>
+map \t :Tags<CR>
+map \g :Rg<CR>
+map \k :NERDTreeToggleVCS<CR>
+map \0 :NERDTreeFind<CR>
+
+let g:gutentags_ctags_exclude = [
+      \ '*.git', '*.svg', '*.hg',
+      \ '*/tests/*',
+      \ 'build',
+      \ 'dist',
+      \ 'tags*',
+      \ '*.css',
+      \ '*.less',
+      \ '*.scss',
+      \ ]
 
 augroup style
   autocmd!
