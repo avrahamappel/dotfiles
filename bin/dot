@@ -40,6 +40,8 @@ done
 
 export ZSH=$HOME/.dotfiles
 
+(cd $ZSH && git pull)
+
 if test $(uname) = "Darwin"
 then
   # Set macOS defaults
