@@ -26,8 +26,10 @@ Plugin 'scrooloose/nerdtree'
 " Code style / syntax plugins
 Plugin 'sheerun/vim-polyglot'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'sbdchd/neoformat'
+Plugin 'prettier/vim-prettier'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'preservim/nerdcommenter'
+Plugin 'airblade/vim-gitgutter'
 
 " Theme plugins
 Plugin 'tomasr/molokai'
@@ -43,9 +45,10 @@ set smarttab
 set expandtab
 
 " Editor appearance
-set nowrap
 set number
+set signcolumn=number
 set laststatus=2
+set showcmd
 
 " Search options
 set ignorecase
@@ -75,14 +78,22 @@ let g:gutentags_ctags_exclude = [
       \ '*.scss',
       \ ]
 
-augroup style
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
+let g:prettier#autoformat = v:true
 
-augroup lint
-  autocmd!
-  autocmd FileType javascript setlocal makeprg=npx\ eslint
-  autocmd BufWritePost *.js silent make! <afile> | silent redraw!
-  autocmd QuickFixCmdPost [^l]* cwindow
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_mode_map = {
+    \ "mode": "passive",
+    \ "active_filetypes": ["php", "javascript", "typescript"],
+    \ "passive_filetypes": [] }
+
+let g:syntastic_php_checkers = ["phpstan"]
+let g:syntastic_php_phpstan_args = "--level=8 -c phpstan_baseline.neon"
+let g:syntastic_javascript_checkers = ["eslint"]
+let g:syntastic_typescript_checkers = ["eslint"]
+
+" Source .vimrc whenever it's written
+augroup source_vimrc
+    autocmd!
+    autocmd BufWritePost .vimrc source %
 augroup END
