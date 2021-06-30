@@ -23,13 +23,18 @@ Plugin 'universal-ctags/ctags'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'scrooloose/nerdtree'
 
+" Editor appearance plugins
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'airblade/vim-gitgutter'
+
 " Code style / syntax plugins
 Plugin 'sheerun/vim-polyglot'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'prettier/vim-prettier'
 Plugin 'vim-syntastic/syntastic'
+
+" Plugins that add actions
 Plugin 'preservim/nerdcommenter'
-Plugin 'airblade/vim-gitgutter'
 
 " Theme plugins
 Plugin 'tomasr/molokai'
@@ -45,7 +50,7 @@ set smarttab
 set expandtab
 
 " Editor appearance
-set number
+set number relativenumber
 set signcolumn=number
 set laststatus=2
 set showcmd
@@ -78,17 +83,20 @@ let g:gutentags_ctags_exclude = [
       \ '*.scss',
       \ ]
 
-let g:prettier#autoformat = v:true
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#quickfix_enabled = 0
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_wq = 1
 let g:syntastic_mode_map = {
     \ "mode": "passive",
     \ "active_filetypes": ["php", "javascript", "typescript"],
     \ "passive_filetypes": [] }
 
 let g:syntastic_php_checkers = ["phpstan"]
-let g:syntastic_php_phpstan_args = "--level=8 -c phpstan_baseline.neon"
+let g:syntastic_php_phpstan_args = "--memory-limit=0 --level=8 --configuration=phpstan-baseline.neon"
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_typescript_checkers = ["eslint"]
 
