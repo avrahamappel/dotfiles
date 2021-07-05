@@ -43,6 +43,9 @@ Plugin 'tomasr/molokai'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" OSX stupid backspace fix
+set backspace=indent,eol,start
+
 " Tabs
 set tabstop=4
 set shiftwidth=4
