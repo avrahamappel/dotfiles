@@ -53,11 +53,14 @@ set expandtab
 set number relativenumber
 set signcolumn=number
 set laststatus=2
+set ruler
 set showcmd
 
 " Search options
 set ignorecase
 set smartcase
+set hlsearch
+set incsearch
 
 colorscheme molokai
 
