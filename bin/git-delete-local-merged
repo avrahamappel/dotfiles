@@ -4,5 +4,9 @@
 # our favorite @tekkub:
 #
 #   https://plus.google.com/115587336092124934674/posts/dXsagsvLakJ
+merged_branches=$(git branch --merged | grep -v '^*' | grep -v 'master' | tr -d '\n')
 
-git branch -d `git branch --merged | grep -v '^*' | grep -v 'master' | tr -d '\n'`
+if [[ $merged_branches != "" ]]
+then
+    git branch -d $merged_branches
+fi
