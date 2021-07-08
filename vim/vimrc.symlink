@@ -77,6 +77,8 @@ map \t :Tags<CR>
 map \g :Rg<CR>
 map \k :NERDTreeToggleVCS<CR>
 map \0 :NERDTreeFind<CR>
+map [l :lprevious<CR>
+map ]l :lnext<CR>
 
 let g:gutentags_ctags_exclude = [
       \ '*.git', '*.svg', '*.hg',
