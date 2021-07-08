@@ -104,7 +104,7 @@ let g:syntastic_mode_map = {
     \ "passive_filetypes": [] }
 
 let g:syntastic_php_checkers = ["phpstan"]
-let g:syntastic_php_phpstan_args = "--memory-limit=0 --level=8 --configuration=phpstan-baseline.neon"
+let g:syntastic_php_phpstan_args = "--memory-limit=4G"
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_typescript_checkers = ["eslint"]
 
