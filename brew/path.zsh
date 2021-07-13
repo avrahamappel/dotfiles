@@ -1,1 +1,5 @@
-export PATH="/usr/local/sbin:$PATH" # Homebrew's sbin
+segment="/usr/local/sbin" # Homebrew's sbin
+
+if [[ ! $PATH =~ $segment ]]; then
+  export PATH="$segment:$PATH"
+fi
