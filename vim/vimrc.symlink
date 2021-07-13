@@ -46,6 +46,9 @@ filetype plugin indent on    " required
 " OSX stupid backspace fix
 set backspace=indent,eol,start
 
+" Enable mouse control
+set mouse=a
+
 " Tabs
 set tabstop=4
 set shiftwidth=4
@@ -79,6 +82,8 @@ map \k :NERDTreeToggleVCS<CR>
 map \0 :NERDTreeFind<CR>
 map [l :lprevious<CR>
 map ]l :lnext<CR>
+map \l :lclose<CR>
+map \/ :nohlsearch<CR>
 
 let g:gutentags_ctags_exclude = [
       \ '*.git', '*.svg', '*.hg',
