@@ -85,6 +85,10 @@ map ]l :lnext<CR>
 map \l :lclose<CR>
 map \/ :nohlsearch<CR>
 
+"""""""""""""""""""""""""""""""""""""
+" Plugins settings
+"""""""""""""""""""""""""""""""""""""
+
 let g:gutentags_ctags_exclude = [
       \ '*.git', '*.svg', '*.hg',
       \ '*/tests/*',
@@ -95,6 +99,10 @@ let g:gutentags_ctags_exclude = [
       \ '*.less',
       \ '*.scss',
       \ ]
+
+let NERDTreeQuitOnOpen = 1
+
+let g:NERDSpaceDelims = 1
 
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
